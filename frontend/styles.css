@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    background-image: url("https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Ym9va3xlbnwwfHwwfHx8MA%3D%3D");
+}
+span{
+display: flex;
+align-items: center;
+}
+
+.cartItems{
+    font-size: large;
+    font-weight: bolder;
+    color: pink;
+    
+}
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-image: url("https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Ym9va3xlbnwwfHwwfHx8MA%3D%3D");
+
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+select, input {
+    padding: 5px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allows books to wrap to the next row */
+    justify-content: space-between;
+    gap: 20px; /* Adjust gap between books */
+}
+
+.book {
+    background: rgb(172, 126, 96);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    width: calc(33.33% - 20px); /* Ensures 3 items per row */
+    box-sizing: border-box; /* Prevents extra width from padding */
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+
+.book img {
+    width: 50px;
+    border-radius: 5px;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 20px;
+    float: right;
+}
+.filters img{
+    width: 50px;
+    border-radius: 5px;
+}
+button{
+    background-color: pink;
+    border-radius: 20px;
+    padding: 20px;
+}
+.plus-minus{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+h1{
+    color: pink;
+}
+.book {
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+.book:hover {
+    transform: scale(1.02);
+}
+
+.book-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.book:hover .book-actions {
+    opacity: 1;
+}
+
+.edit-icon,
+.delete-icon {
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    color: pink;
+}
+#editModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.log-reg{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+}
+.card {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+}

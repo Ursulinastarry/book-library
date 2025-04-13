@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="auth.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <title>Library Management System - Authentication</title>
+  </head>
+  <body>
+    <!-- Login Form -->
+    <div id="loginContainer" class="auth-container">
+      <div class="auth-form-wrapper">
+        <div class="auth-header">
+          <h2><i class="fas fa-book-reader"></i> Library Management System</h2>
+        </div>
+
+        <div class="auth-body">
+          <div class="auth-form-container">
+            <h3><i class="fas fa-sign-in-alt"></i> Login to Your Account</h3>
+            <div id="loginError" class="auth-error"></div>
+            <form id="loginForm" class="auth-form">
+              <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" required />
+              </div>
+
+              <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <div class="password-input">
+                  <input type="password" id="loginPassword" required />
+                  <i
+                    class="fas fa-eye toggle-password"
+                    data-for="loginPassword"
+                  ></i>
+                </div>
+              </div>
+
+              <div class="form-group role-selection">
+                <label>Login as:</label>
+                <div class="role-options">
+                  <div class="role-option">
+                    <input
+                      type="radio"
+                      id="roleBorrower"
+                      name="userRole"
+                      value="borrower"
+                      checked
+                    />
+                    <label for="roleBorrower">Borrower</label>
+                  </div>
+                  <div class="role-option">
+                    <input
+                      type="radio"
+                      id="roleLibrarian"
+                      name="userRole"
+                      value="librarian"
+                    />
+                    <label for="roleLibrarian">Librarian</label>
+                  </div>
+                  <div class="role-option">
+                    <input
+                      type="radio"
+                      id="roleAdmin"
+                      name="userRole"
+                      value="admin"
+                    />
+                    <label for="roleAdmin">Admin</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group remember-me">
+                <input type="checkbox" id="rememberMe" />
+                <label for="rememberMe">Remember me</label>
+                <a href="#" class="forgot-password">Forgot password?</a>
+              </div>
+
+              <button type="submit" id="submit">Login</button>
+            </form>
+            <div class="auth-footer">
+              <p>
+                Don't have an account?
+                <a href="#" id="switchToSignup">Sign up</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signupContainer" class="auth-container hidden">
+      <div class="auth-form-wrapper">
+        <div class="auth-header">
+          <h2><i class="fas fa-book-reader"></i> Library Management System</h2>
+        </div>
+        <div class="auth-body">
+          <div class="auth-form-container">
+            <h3><i class="fas fa-user-plus"></i> Create an Account</h3>
+            <div id="signupError" class="auth-error"></div>
+            <form id="signupForm" class="auth-form">
+              <div class="form-group">
+                <label for="signupName">Full Name</label>
+                <input type="text" id="signupName" required />
+              </div>
+
+              <div class="form-group">
+                <label for="signupEmail">Email</label>
+                <input type="email" id="signupEmail" required />
+              </div>
+
+              <div class="form-group">
+                <label for="signupPassword">Password</label>
+                <div class="password-input">
+                  <input type="password" id="signupPassword" required />
+                  <i
+                    class="fas fa-eye toggle-password"
+                    data-for="signupPassword"
+                  ></i>
+                </div>
+                <div class="password-strength">
+                  <div class="strength-meter" id="passwordStrength"></div>
+                  <span id="passwordStrengthText">Password strength</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <div class="password-input">
+                  <input type="password" id="confirmPassword" required />
+                  <i
+                    class="fas fa-eye toggle-password"
+                    data-for="confirmPassword"
+                  ></i>
+                </div>
+              </div>
+
+              <div class="form-group role-selection">
+                <label>Register as:</label>
+                <div class="role-options">
+                  <div class="role-option">
+                    <input
+                      type="radio"
+                      id="signupRoleBorrower"
+                      name="signupUserRole"
+                      value="borrower"
+                      checked
+                    />
+                    <label for="signupRoleBorrower">Borrower</label>
+                  </div>
+                </div>
+                <p class="role-note">
+                  Note: Librarian and Admin roles require approval
+                </p>
+              </div>
+
+              <div class="form-group terms-group">
+                <input type="checkbox" id="agreeTerms" required />
+                <label for="agreeTerms"
+                  >I agree to the <a href="#">Terms of Service</a> and
+                  <a href="#">Privacy Policy</a></label
+                >
+              </div>
+
+              <button type="submit" id="signup">Create Account</button>
+            </form>
+            <div class="auth-footer">
+              <p>
+                Already have an account?
+                <a href="#" id="switchToLogin">Login</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Basic JS for toggling between forms
+      document
+        .getElementById("switchToSignup")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          document.getElementById("loginContainer").classList.add("hidden");
+          document.getElementById("signupContainer").classList.remove("hidden");
+        });
+
+      document
+        .getElementById("switchToLogin")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          document.getElementById("signupContainer").classList.add("hidden");
+          document.getElementById("loginContainer").classList.remove("hidden");
+        });
+
+      // Toggle password visibility
+      document.querySelectorAll(".toggle-password").forEach(function (toggle) {
+        toggle.addEventListener("click", function () {
+          const passwordField = document.getElementById(
+            this.getAttribute("data-for")
+          );
+          const type =
+            passwordField.getAttribute("type") === "password"
+              ? "text"
+              : "password";
+          passwordField.setAttribute("type", type);
+          this.classList.toggle("fa-eye");
+          this.classList.toggle("fa-eye-slash");
+        });
+      });
+    </script>
+    <script type="module" src="./src/auth.js"></script>
+  </body>
+</html>

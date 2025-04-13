@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>📚 Lina's Library💕</h1>
+        <div class="log-reg">
+
+            <button id="logout">Logout</button>
+
+           
+        </div>
+
+        <div class="filters">
+            <div>
+                <button id="addBookBtn">Add Book</button>
+
+                <!-- Modal -->
+                <div id="bookModal" class="modal">
+                    <div class="modal-content">
+                        <div id="successMessage"></div>
+                        <span class="close">&times;</span>
+                        <h2>Add a New Book</h2>
+                        <form id="bookForm">
+                           
+
+                            <label for="title">Title:</label>
+                            <input type="text" id="title" required>
+
+                            <label for="author">Author:</label>
+                            <input type="text" id="author" required>
+
+                            <label for="genre">Genre:</label>
+                            <input type="text" id="genre" required>
+
+                            <label for="year">Year:</label>
+                            <input type="number" id="year" required>
+
+                            <label for="pages">Pages:</label>
+                            <input type="number" id="pages" required>
+
+                            <label for="publisher">Publisher:</label>
+                            <input type="text" id="publisher" required>
+
+                            <label for="description">Description:</label>
+                            <textarea id="description" required></textarea>
+
+                            <label for="image">Image URL:</label>
+                            <input type="text" id="image" required>
+
+                            <label for="price">Price:</label>
+                            <input type="number" id="price" required>
+
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div><button id="return" >Return</button>
+                <!-- Return Book Modal -->
+<div id="returnModal" class="modal">
+    <div class="modal-content">
+      <h3>Return Book</h3>
+      <label for="borrowerIdInput">Enter your Borrower ID:</label>
+      <input type="number" id="borrowerIdInput" placeholder="Borrower ID">
+      <div class="button-group">
+        <button id="confirmReturn" class="btn btn-primary">Return</button>
+        <button id="closeReturnModal" class="btn btn-secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+            </div>
+            <label for="genreFilter">Filter by Genre:</label>
+            <select id="genreFilter">
+                <option value="">All</option>
+            </select>
+
+            <label for="sortBy">Sort By:</label>
+            <select id="sortBy">
+                <option value="year">Year</option>
+                <option value="title">title</option>
+                <option value="title">author</option>
+
+            </select>
+
+            <input type="text" id="searchInput" placeholder="Search by title...">
+            <img id="cart" src="./cart-icon-28344.png" alt="">
+            <span id="cartItems">0</span>
+        </div>
+
+        <ul id="booksList"></ul>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalMessage"></div>
+            <div id="modalDetails"></div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <script type="module" src="./src/index.js"></script>
+</body>
+
+</html>
