@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "year": 1937,
+    "pages": 310,
+    "price": 15,
+    "description": "A hobbit adventure to reclaim a treasure.",
+    "image": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": 2,
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Dystopian",
+    "year": 1949,
+    "pages": 328,
+    "price": 12,
+    "description": "A chilling story about totalitarianism.",
+    "image": "https://images.unsplash.com/photo-1528222354210-7b0b57d73f75?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": 3,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": "Classic",
+    "year": 1813,
+    "pages": 279,
+    "price": 10,
+    "description": "A romantic novel of manners.",
+    "image": "https://images.unsplash.com/photo-1519682577862-22b62b24e493?auto=format&fit=crop&w=400&q=80"
+  }
+]

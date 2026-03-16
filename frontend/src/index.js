@@ -1,4 +1,4 @@
-const booksUrl = './books.json';
+const booksUrl = '/books.json';
 let books = [];
 let cart = [];
 
