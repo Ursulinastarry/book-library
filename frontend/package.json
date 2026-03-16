@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsc --watch",
     "serve": "vite",
-    "build": "tsc",
+    "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
     "start": "json-server --watch books.json --port 3000"
